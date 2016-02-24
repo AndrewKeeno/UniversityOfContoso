@@ -1,0 +1,58 @@
+﻿@model UoC_Site.Models.Test
+
+@{
+    ViewBag.Title = "Test Details";
+}
+
+<h2>TestDetails</h2>
+
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weighting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weighting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to Overview", "Overview")
+</p>

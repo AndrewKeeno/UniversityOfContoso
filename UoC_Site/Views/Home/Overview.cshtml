@@ -1,0 +1,145 @@
+﻿@model UoC_Site.Models.StudentFull
+
+@{
+    ViewBag.Title = "Overview";
+}
+
+<h2>Overview</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstMidName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstMidName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+        </dl>
+    </div>
+
+    <div id="todos">
+        <div class="container">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>
+                            <a data-toggle="collapse" href=#todolist>To Do's</a> - @Html.ActionLink("New To Do", "Create", "ToDoItem", new { studentId = Model.ID }, null)
+                        </h4>
+                    </div>
+                    <div id=todolist class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                @Model.ToDoItems.Count ToDo's present.
+                                <br />
+                                @Html.ActionLink("Veiw Detail List", "List", "ToDoItem", new { studentId = Model.ID }, null)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="courseHeading">
+        <h4>
+            Courses - @Html.ActionLink("New Course", "Create", "Course", new { studentId = Model.ID }, null)
+        </h4>
+    </div>
+
+    <div id="courses">
+        @foreach (var c in Model.Courses)
+        {
+            <div class="container">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>
+                                <a data-toggle="collapse" href=#c_@c.ID>@c.Title</a> - @Html.ActionLink("Details", "Details", "Course", new { id = c.ID }, null)
+                            </h4>
+                        </div>
+                        <div id=c_@c.ID class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <dl class="dl-horizontal">
+                                    <dt>Title</dt>
+                                    <dd>@c.Title</dd>
+                                    <dt>Description</dt>
+                                    <dd>@c.Description</dd>
+                                </dl>
+
+                                <div id="testsHeading">
+                                    <h4>
+                                        Tests - @Html.ActionLink("New Test", "Create", "Test", new { courseId = c.ID }, null)
+                                    </h4>
+                                </div>
+
+                                @foreach (var t in c.Tests)
+                                {
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4>
+                                                <a data-toggle="collapse" href=#t_@t.ID>@t.Name</a>
+                                                -  @Html.ActionLink("Details", "Details", "Test", new { id = t.ID }, null)
+                                            </h4>
+                                        </div>
+                                        <div id=t_@t.ID class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <dl class="dl-horizontal">
+                                                    <dt>Name</dt>
+                                                    <dd>@t.Name</dd>
+                                                    <dt>Test Date & Time</dt>
+                                                    <dd>@t.TestDateTime</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                                <div id="courseHeading">
+                                    <h4>
+                                        Assignments - @Html.ActionLink("New Assignment", "Create", "Assignment", new { courseId = c.ID }, null)
+                                    </h4>
+                                </div>
+
+                                @foreach (var a in c.Assignments)
+                                {
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4>
+                                                <a data-toggle="collapse" href=#a_@a.ID>@a.Name</a>
+                                                -  @Html.ActionLink("Details", "Details", "Assignment", new { id = a.ID }, null)
+                                            </h4>
+                                        </div>
+                                        <div id=a_@a.ID class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <dl class="dl-horizontal">
+                                                    <dt>Name</dt>
+                                                    <dd>@a.Name</dd>
+                                                    <dt>Due Date & Time</dt>
+                                                    <dd>@a.DueDateTime</dd>
+                                                    <dt>Link To Work</dt>
+                                                    <dd><a href=@a.LinkToWork>@a.LinkToWork</a></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

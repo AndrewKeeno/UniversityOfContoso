@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index: Login";
+}
+
+<h2>Select Student:</h2>
+
+<div>
+    <ul class="list-inline">
+        <li class="list-group">
+            <div class="list-group-item">
+                <h4 class="list-group-item-heading">Student 1</h4>
+                <button class="btn-link">
+                    @Html.ActionLink("Login", "Overview", "Home", new { id = 1 }, new { })
+                </button>
+            </div>
+        </li>
+        <li class="list-group">
+            <div class="list-group-item">
+                <h4 class="list-group-item-heading">Student 2</h4>
+                <button class="btn-link">
+                    @Html.ActionLink("Login", "Overview", "Home", new { id = 2 }, new { })
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>
