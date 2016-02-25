@@ -24,7 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <ApplicationInsightsResourceId>/subscriptions/2b4f0f7e-c89a-4749-b49b-983f3f4f1993/resourcegroups/UoC_API/providers/microsoft.insights/components/UoC_API</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/2b4f0f7e-c89a-4749-b49b-983f3f4f1993/resourcegroups/UoC/providers/microsoft.insights/components/UoC-API-akee516</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
