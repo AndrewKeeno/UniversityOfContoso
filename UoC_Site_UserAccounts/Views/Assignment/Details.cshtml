@@ -1,0 +1,66 @@
+﻿@model UoC_Site_UserAccounts.Models.Assignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weighting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weighting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutOf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutOf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightedScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightedScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkToWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkToWork)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
