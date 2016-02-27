@@ -16,7 +16,7 @@ namespace UoC_Site.Controllers
         public AssignmentController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:58102/");
+            client.BaseAddress = new Uri("http://uoc-api-akee516.azurewebsites.net/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }

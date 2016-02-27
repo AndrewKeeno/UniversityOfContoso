@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Globalization;
 using System.Linq;
 
 namespace UoC_API.Models
@@ -142,7 +143,7 @@ namespace UoC_API.Models
                                 ID = 1,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 1),
                                 Name = "Test 1",
-                                TestDateTime = DateTime.Parse("15/04/2013 12:00 PM"),
+                                TestDateTime = DateTime.Parse("15/04/2013 12:00 PM", new CultureInfo("en-NZ")),
                                 Weighting = 15,
                                 Marks = 50,
                                 Score = 42
@@ -151,14 +152,14 @@ namespace UoC_API.Models
                                 ID = 2,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 1),
                                 Name = "Test 2",
-                                TestDateTime = DateTime.Parse("01/05/2013 3:00 PM"),
+                                TestDateTime = DateTime.Parse("1/05/2013 3:00 PM", new CultureInfo("en-NZ")),
                                 Weighting = 10
                             },
                             new Test {
                                 ID = 3,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 5),
                                 Name = "Test 1",
-                                TestDateTime = DateTime.Parse("15/04/2013 12:00 PM"),
+                                TestDateTime = DateTime.Parse("15/04/2013 12:00 PM", new CultureInfo("en-NZ")),
                                 Weighting = 15,
                                 Marks = 50,
                                 Score = 42
@@ -167,7 +168,7 @@ namespace UoC_API.Models
                                 ID = 4,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 3),
                                 Name = "Test",
-                                TestDateTime = DateTime.Parse("17/04/2013 11:00 AM"),
+                                TestDateTime = DateTime.Parse("17/04/2013 11:00 AM", new CultureInfo("en-NZ")),
                                 Weighting = 15,
                                 Marks = 50,
                                 Score = 42
@@ -176,7 +177,7 @@ namespace UoC_API.Models
                                 ID = 5,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 3),
                                 Name = "Test 2",
-                                TestDateTime = DateTime.Parse("27/04/2013 9:00 AM"),
+                                TestDateTime = DateTime.Parse("27/04/2013 9:00 AM", new CultureInfo("en-NZ")),
                                 Weighting = 12.5,
                                 Marks = 100,
                                 Score = 53
@@ -191,7 +192,7 @@ namespace UoC_API.Models
                                 ID = 1,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 2),
                                 Name = "Assignment 1",
-                                DueDateTime = DateTime.Parse("15/05/2013 12:00 PM"),
+                                DueDateTime = DateTime.Parse("15/05/2013 12:00 PM", new CultureInfo("en-NZ")),
                                 Weighting = 5,
                                 Marks = 50,
                                 Score = 42
@@ -200,14 +201,14 @@ namespace UoC_API.Models
                                 ID = 2,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 2),
                                 Name = "Assignment 2",
-                                DueDateTime = DateTime.Parse("07/06/2013 11:59 PM"),
+                                DueDateTime = DateTime.Parse("7/06/2013 11:59 PM", new CultureInfo("en-NZ")),
                                 Weighting = 5
                             },
                             new Assignment {
                                 ID = 3,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 4),
                                 Name = "Assignment",
-                                DueDateTime = DateTime.Parse("15/04/2013 12:00 PM"),
+                                DueDateTime = DateTime.Parse("15/04/2013 12:00 PM", new CultureInfo("en-NZ")),
                                 Weighting = 10,
                                 Marks = 100,
                                 Score = 99
@@ -216,7 +217,7 @@ namespace UoC_API.Models
                                 ID = 4,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 5),
                                 Name = "Quiz",
-                                DueDateTime = DateTime.Parse("17/04/2013 10:00 AM"),
+                                DueDateTime = DateTime.Parse("17/04/2013 10:00 AM", new CultureInfo("en-NZ")),
                                 Weighting = 2,
                                 Marks = 10,
                                 Score = 7
@@ -225,7 +226,7 @@ namespace UoC_API.Models
                                 ID = 5,
                                 Course = context.Courses.SingleOrDefault(c => c.ID == 1),
                                 Name = "Lab 1",
-                                DueDateTime = DateTime.Parse("27/04/2013 9:00 AM"),
+                                DueDateTime = DateTime.Parse("27/04/2013 9:00 AM", new CultureInfo("en-NZ")),
                                 Weighting = 6.33,
                                 Marks = 50,
                                 Score = 36

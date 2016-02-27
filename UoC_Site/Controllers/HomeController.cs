@@ -22,7 +22,7 @@ namespace UoC_Site.Controllers
             StudentFull model = new StudentFull();
             using (HttpClient client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:58102/");
+                client.BaseAddress = new Uri("http://uoc-api-akee516.azurewebsites.net/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
